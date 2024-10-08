@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ChevronUp, ChevronDown } from 'lucide-react';
 
 export default function Home() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -32,6 +33,65 @@ export default function Home() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  const faqData = [
+    {
+      question: "How does the forecasting and budgeting feature work?",
+      answer: "Our platform's forecasting and budgeting tools allow you to project future financial scenarios based on historical data and current trends. You can set financial goals, allocate resources efficiently, and track your progress over time."
+    },
+    {
+      question: "How does BizSimpl support businesses?",
+      answer: "BizSimpl supports businesses in various ways. Please expand this section for more details."
+    },
+    {
+      question: "Is BizSimpl secure for online transactions?",
+      answer: "BizSimpl takes security seriously. Please expand this section for more information on our security measures."
+    },
+    {
+      question: "How quickly can businesses access funds through BizSimpl?",
+      answer: "The fund access process through BizSimpl is designed to be efficient. Expand this section for more details on timelines."
+    },
+    {
+      question: "Can I set up recurring payments and automate financial tasks with BizSimpl?",
+      answer: "Yes, BizSimpl offers features for recurring payments and task automation. Expand this section for more information."
+    }
+  ];
+  
+  const FAQItem = ({ question, answer, isOpen, toggleOpen }) => (
+    <div className="border-b border-gray-200 py-4">
+      <button
+        className="flex justify-between items-center w-full text-left"
+        onClick={toggleOpen}
+      >
+        <span className="text-sm font-medium text-gray-900">{question}</span>
+        {isOpen ? (
+          <ChevronUp className="h-5 w-5 text-gray-500" />
+        ) : (
+          <ChevronDown className="h-5 w-5 text-gray-500" />
+        )}
+      </button>
+      {isOpen && (
+        <p className="mt-2 text-sm text-gray-500">{answer}</p>
+      )}
+    </div>
+  );
+  const [openIndex, setOpenIndex] = useState(0);
+  const steps = [
+    {
+      imageSrc: "/icon.png",
+      title: "Fill Form",
+      description: "Simply fill the above form to get started."
+    },
+    {
+      imageSrc: "/icon (1).png",
+      title: "Call to discuss",
+      description: "Our expert will connect with you & complete legalities."
+    },
+    {
+      imageSrc: "/icon (2).png",
+      title: "Get Incorporation",
+      description: "Get your Company Incorporation"
+    }
+  ];
   const clients = [
     { name: "Client 1", logo: "/Bytebox Media.png" },
     { name: "Client 2", logo: "/Pulan_AI.png" },
@@ -111,7 +171,7 @@ export default function Home() {
             />
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-10 hover:text-purple-400">About Us</a>
+            <a className="mr-10 hover:text-gray-900">About Us</a>
             <div className="relative" ref={dropdownRef}>
               <button
                 className="mr-10 hover:text-purple-400 flex items-center"
@@ -150,8 +210,8 @@ export default function Home() {
                 </div>
               )}
             </div>
-            <a className="mr-10 hover:text-purple-400">Pricing Plan</a>
-            <a className="hover:text-purple-400">Resources</a>
+            <a className="mr-10 hover:text-gray-900">Pricing Plan</a>
+            <a className="hover:text-gray-900">Resources</a>
           </nav>
           <button className="inline-flex items-center bg-purple-600 border-0 py-1 px-3 focus:outline-none hover:bg-purple-700 rounded text-base mt-4 md:mt-0 text-white">
             Register your Business
@@ -166,20 +226,20 @@ export default function Home() {
         <div className="flex flex-col md:flex-row">
           {/* Left Column */}
           <div className="w-full md:w-1/2 bg-purple-700 text-white p-8">
-            <h1 className="text-4xl font-bold mb-4">Start, Grow, and Succeed with Our Expert Legal Services</h1>
-            <p className="mb-6">We simplify the complexities so you can concentrate on your vision.</p>
+            <h1 className="text-4xl font-bold mb-4">LLP Registration Incorporation</h1>
+            <p className="mb-6">Start Your Partnership Hassle-Free with Complete LLP Registration Support.</p>
             <ul className="space-y-2">
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                Collect signatures, scan IDs, and print badges
+                Simple and Efficient Partnership Formation
               </li>
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                Maximize compliance across your facilities
+                Comprehensive Support: PAN, TAN, Compliance Assistance
               </li>
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                Add & adjust check-in requirements
+                Additional Perks: Expert Advice and Essential Business Tools
               </li>
             </ul>
           </div>
@@ -221,94 +281,128 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="py-12 px-4 max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">All Services</h2>
-          
-          {/* Service Tags */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <button className="px-4 py-2 rounded-full bg-purple-600 text-white hover:bg-purple-700">Startup Incorporation</button>
-            <Link href="/NewPage2">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">Private Limited Incorporation</button>
-            </Link>
-            <Link href="/NewPage3">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">One Person Incorporation</button>
-            </Link>
-            <Link href="/NewPage4">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">LLP Registration</button>
-            </Link>
-            <Link href="/NewPage5">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">GST Registration</button>
-            </Link>
-            <Link href="/NewPage6">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">MSME Registration</button>
-            </Link>
-            <Link href="/NewPage7">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">ISO Certification</button>
-            </Link>
-            <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100" disabled>Coming Soon</button>
+        <div className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center text-purple-900 mb-4">Here's How It Works</h2>
+          <p className="text-center text-gray-600 mb-12">Get your Company Registration in 3 steps</p>
+      
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
+            {steps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center max-w-xs">
+                <div>
+                  <Image 
+                    src={step.imageSrc} 
+                    alt={step.title}
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-purple-900 mb-2 text-center">{step.title}</h3>
+                <p className="text-center text-gray-600">{step.description}</p>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block">
+                    <div className="w-12 h-1 bg-purple-300 mt-8 mx-auto"></div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
-          
-          {/* Service Cards */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Pvt. Ltd. Incorporation Card */}
-            <div className="border rounded-lg p-6 shadow-sm hover:">
-              <div className="flex items-center mb-4">
-                <Image src="/Group.png" alt="OPC Icon" width={40} height={40} className="relative z-0"/>
-                <Image src="/Ellipse 2.png" alt="OPC Icon" width={40} height={40} className="absolute top-0 left-0 z-10" />
-                <h3 className="text-xl font-semibold ml-3">Pvt. Ltd. Incorporation</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Private limited company is popular and well known business structure it enjoys wide options to raise funds through bank loans, angel investors, venture capitalists, in comparison to LLPs and OPCs.
-              </p>
-              <button className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full mx-auto block hover:bg-purple-700">Get Started</button>
-            </div>
+        </div>
+        <div className="flex items-center justify-center pl-10 pr-10">
+          <div className="text-center px-20">
+            <h1 className="text-2xl font-bold mb-1">
+              LLP Registration: A Modern Approach to Business Partnership
+            </h1>
+            <p className="text-lg">
+              In today’s dynamic business environment, entrepreneurs are constantly seeking business structures that offer both flexibility and legal protection. Limited Liability Partnership (LLP) registration is an increasingly popular choice among small and medium-sized enterprises in India. Combining the benefits of both a company and a partnership, an LLP is ideal for professionals and business owners who want to manage their operations with a mix of limited liability and operational flexibility. This article will guide you through the essentials of LLP registration, the benefits it offers, and how BizSimpl can help make the registration process seamless.
+            </p>
+          </div>
+        </div>
+        <div className="px-20 py-6">
+          <h1 className="text-2xl font-bold mb-4">What is LLP Registration?</h1>
+          <p className="text-lg mb-6">
+            LLP registration refers to the process of legally establishing a Limited Liability Partnership under the LLP Act, 2008. An LLP is a unique business structure that allows partners to enjoy the benefits of limited liability, much like shareholders in a private limited company, while also offering the operational flexibility of a traditional partnership.
+          </p>
+          <p className="text-lg mb-6">
+            In an LLP, each partner’s liability is limited to their agreed contribution, meaning personal assets are generally protected from business debts. Additionally, an LLP has a separate legal identity from its partners, which allows the partnership to own property, enter into contracts, and sue or be sued in its own name.
+          </p>
+    
+          <h2 className="text-2xl font-bold mb-4">Benefits of LLP Registration</h2>
+          <ul className="list-disc ml-5 text-lg mb-6">
+            <li className="mb-3">
+              <strong>Limited Liability Protection:</strong> One of the most significant advantages of registering as an LLP is that partners are only liable for the business’s debts up to the extent of their contributions. This protects personal assets from being used to cover business losses or liabilities.
+            </li>
+            <li className="mb-3">
+              <strong>Operational Flexibility:</strong> Unlike a private limited company, an LLP does not require a board of directors or complicated management structures. Partners have the freedom to manage the business directly, making decision-making processes quicker and more straightforward.
+            </li>
+            <li className="mb-3">
+              <strong>Separate Legal Entity:</strong> An LLP enjoys the benefits of a separate legal identity, which means the partnership can continue to exist even if partners change. This ensures continuity and stability in the business.
+            </li>
+            <li className="mb-3">
+              <strong>Tax Benefits:</strong> LLPs are taxed as partnerships, which can often result in lower tax liabilities compared to other business structures. They are also not subject to dividend distribution tax, which is a significant advantage over private limited companies.
+            </li>
+            <li className="mb-3">
+              <strong>Ease of Compliance:</strong> The compliance requirements for an LLP are less stringent than those for a private limited company. There are fewer mandatory filings, and the overall regulatory burden is lower, making it easier and more cost-effective to maintain compliance.
+            </li>
+            <li className="mb-3">
+              <strong>Attracting Investors:</strong> LLPs can attract investment more easily than traditional partnerships due to their structured format and limited liability, making them an appealing choice for venture capitalists and other investors.
+            </li>
+          </ul>
+    
+          <h2 className="text-2xl font-bold mb-4">Steps to Register an LLP</h2>
+          <ol className="list-decimal ml-5 text-lg mb-6">
+            <li className="mb-3">
+              <strong>Obtain Digital Signature Certificate (DSC):</strong> All designated partners must have a DSC, which is used to sign documents electronically during the registration process.
+            </li>
+            <li className="mb-3">
+              <strong>Apply for Director Identification Number (DIN):</strong> Each designated partner must also obtain a DIN, a unique identification number required for registration.
+            </li>
+            <li className="mb-3">
+              <strong>Name Reservation:</strong> Choose a unique name for your LLP and reserve it through the Ministry of Corporate Affairs (MCA) portal. The name must not be identical or similar to an existing company or LLP.
+            </li>
+            <li className="mb-3">
+              <strong>Draft and File Incorporation Documents:</strong> Prepare the LLP agreement, which outlines the rights, duties, and profit-sharing ratio among the partners. This agreement, along with other necessary forms, must be filed with the Registrar of Companies (ROC).
+            </li>
+            <li className="mb-3">
+              <strong>Incorporation Certificate:</strong> Once the ROC approves the documents, you will receive the LLP incorporation certificate, which serves as proof of registration.
+            </li>
+            <li className="mb-3">
+              <strong>Apply for PAN and TAN:</strong> Finally, apply for a Permanent Account Number (PAN) and Tax Deduction and Collection Account Number (TAN) for your LLP to manage tax obligations.
+            </li>
+          </ol>
+    
+          <h2 className="text-2xl font-bold mb-4">Why Choose BizSimpl for LLP Registration?</h2>
+          <p className="text-lg mb-6">
+            Navigating the complexities of LLP registration can be overwhelming, especially for first-time entrepreneurs. BizSimpl offers expert assistance to ensure your registration process is efficient and error-free. With their guidance, you can avoid common pitfalls and ensure that all legal requirements are met, allowing you to focus on building and growing your business.
+          </p>
+    
+          <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
+          <p className="text-lg">
+            LLP registration is an excellent choice for entrepreneurs and professionals seeking a business structure that offers the dual benefits of limited liability and operational flexibility. With the added advantages of tax benefits and ease of compliance, LLPs are becoming the go-to option for modern businesses in India. By partnering with BizSimpl, you can streamline the registration process and ensure that your LLP is set up correctly from the start. Don’t wait—take the first step towards forming your LLP today and position your business for success.
+          </p>
+        </div>
 
-            {/* OPC Incorporation Card */}
-            <div className="border rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <Image src="/Object.png" alt="OPC Icon" width={40} height={40} className="relative z-0"/>
-                <Image src="/Ellipse 2.png" alt="OPC Icon" width={40} height={40} className="absolute top-0 left-0 z-10" />
-                <h3 className="text-xl font-semibold ml-3">OPC Incorporation</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                The one person company helps startup entrepreneurs they can approach angel investors, venture capitalists for funding and easily convert their OPC into multi shareholder private limited company.
-              </p>
-              <button className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full mx-auto block hover:bg-purple-700">Get Started</button>
-            </div>
-
-            {/* LLP Incorporation Card */}
-            <div className="border rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <Image src="/Objects.png" alt="OPC Icon" width={40} height={40} className="relative z-0"/>
-                <Image src="/Ellipse 2.png" alt="OPC Icon" width={40} height={40} className="absolute top-0 left-0 z-10" />
-                <h3 className="text-xl font-semibold ml-3">LLP Incorporation</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Limited liability partnership is the modern business option for traditional firms operating as partnership.
-              </p>
-              <button className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full mx-auto block hover:bg-purple-700">Get Started</button>
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Clients</h2>
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
+              {clients.map((client, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={120}
+                    height={60}
+                    objectFit="contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
-
-        {/* Testimonial Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-gray-800">Don't just take it from us,<br />but from <span className="text-purple-600">our users</span></h2>
-            
-            <div className="flex justify-end mb-1">
-              <div>
-                <p className="text-4xl font-bold">2k+</p>
-                <p className="text-gray-600 pr-4">Happy Customers</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold">4.6</p>
-                <p className="text-gray-600">From 12 rating</p>
-              </div>
-            </div>
-
+        <div className="max-w-6xl mx-auto px-4 py-5">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">What customers are saying</h3>
+              <h3 className="flex align-center justify-center text-2xl font-semibold mb-6">What customers are saying</h3>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <p className="text-gray-700 mb-4">
                   {testimonials[activeTestimonial].quote}
@@ -334,69 +428,23 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-        <div className="bg-purple-700 text-white py-10 px-6 flex justify-between items-center">
-          <h2 className="text-xl font-semibold">Looking for a premium accounting for your business?</h2>
-          <button className="bg-white text-purple-700 px-4 py-2 rounded-full font-semibold">
-            Get Started
-          </button>
-        </div>
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Clients</h2>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
-              {clients.map((client, index) => (
-                <div key={index} className="flex items-center justify-center" style={{ height: '80px', width: '160px' }}>
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={64}
-                    height={64}
-                    objectFit="contain"
-                 />
-               </div>
+          <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-1">FAQ</h2>
+            <p className="text-xl text-center text-gray-500 mb-8">
+              Learn more about BizSimpl by user Questions
+            </p>
+            <div className="mt-12">
+              {faqData.map((item, index) => (
+                <FAQItem
+                  key={index}
+                  question={item.question}
+                  answer={item.answer}
+                  isOpen={index === openIndex}
+                  toggleOpen={() => setOpenIndex(index === openIndex ? -1 : index)}
+                />
               ))}
             </div>
           </div>
-        </section>
-        <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-2 text-center text-gray-800">Resources</h2>
-          <p className="text-center text-gray-600 mb-8">The latest news, technologies, and resources from our team.</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {resources.map((resource, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src={resource.image}
-                  alt={resource.title}
-                  width={400}
-                  height={200}
-                  objectFit="cover"
-                />
-                <div className="p-6">
-                  <p className="text-sm text-gray-500 mb-2">{resource.category}</p>
-                  <h3 className="text-xl font-semibold mb-2">{resource.title}</h3>
-                  <p className="text-gray-600 mb-4">{resource.description}</p>
-                  <a href={resource.link} className="text-purple-600 font-semibold inline-flex items-center">
-                    Read Now
-                    <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8">
-            <button className="bg-white text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition duration-300">
-              View all resources
-            </button>
-          </div>
-        </div>
-      </section>
       </main>
       <footer className="bg-[#1E293B] text-white">
         <div className="bg-purple-700 py-6 px-4">
@@ -436,17 +484,17 @@ export default function Home() {
             <a href="#" className="hover:text-purple-400">Pricing Plan</a>
           </nav>
           <div className="flex justify-center space-x-6 mb-8">
-          <a href="#">
-              <Image src="/List1.png" alt="Instagram" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List1.png" alt="Instagram" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List2.png" alt="Facebook" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List2.png" alt="Facebook" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List3.png" alt="LinkedIn" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List3.png" alt="LinkedIn" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List4.png" alt="Twitter" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List4.png" alt="Twitter" width={24} height={24} />
             </a>
           </div>
         </div>

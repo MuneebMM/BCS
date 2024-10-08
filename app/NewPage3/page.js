@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
+import { ChevronUp, ChevronDown } from 'lucide-react';
 
 export default function Home() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -32,6 +33,65 @@ export default function Home() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+  const faqData = [
+    {
+      question: "How does the forecasting and budgeting feature work?",
+      answer: "Our platform's forecasting and budgeting tools allow you to project future financial scenarios based on historical data and current trends. You can set financial goals, allocate resources efficiently, and track your progress over time."
+    },
+    {
+      question: "How does BizSimpl support businesses?",
+      answer: "BizSimpl supports businesses in various ways. Please expand this section for more details."
+    },
+    {
+      question: "Is BizSimpl secure for online transactions?",
+      answer: "BizSimpl takes security seriously. Please expand this section for more information on our security measures."
+    },
+    {
+      question: "How quickly can businesses access funds through BizSimpl?",
+      answer: "The fund access process through BizSimpl is designed to be efficient. Expand this section for more details on timelines."
+    },
+    {
+      question: "Can I set up recurring payments and automate financial tasks with BizSimpl?",
+      answer: "Yes, BizSimpl offers features for recurring payments and task automation. Expand this section for more information."
+    }
+  ];
+  
+  const FAQItem = ({ question, answer, isOpen, toggleOpen }) => (
+    <div className="border-b border-gray-200 py-4">
+      <button
+        className="flex justify-between items-center w-full text-left"
+        onClick={toggleOpen}
+      >
+        <span className="text-sm font-medium text-gray-900">{question}</span>
+        {isOpen ? (
+          <ChevronUp className="h-5 w-5 text-gray-500" />
+        ) : (
+          <ChevronDown className="h-5 w-5 text-gray-500" />
+        )}
+      </button>
+      {isOpen && (
+        <p className="mt-2 text-sm text-gray-500">{answer}</p>
+      )}
+    </div>
+  );
+  const [openIndex, setOpenIndex] = useState(0);
+  const steps = [
+    {
+      imageSrc: "/icon.png",
+      title: "Fill Form",
+      description: "Simply fill the above form to get started."
+    },
+    {
+      imageSrc: "/icon (1).png",
+      title: "Call to discuss",
+      description: "Our expert will connect with you & complete legalities."
+    },
+    {
+      imageSrc: "/icon (2).png",
+      title: "Get Incorporation",
+      description: "Get your Company Incorporation"
+    }
+  ];
   const clients = [
     { name: "Client 1", logo: "/Bytebox Media.png" },
     { name: "Client 2", logo: "/Pulan_AI.png" },
@@ -111,7 +171,7 @@ export default function Home() {
             />
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-10 hover:text-purple-400">About Us</a>
+            <a className="mr-10 hover:text-gray-900">About Us</a>
             <div className="relative" ref={dropdownRef}>
               <button
                 className="mr-10 hover:text-purple-400 flex items-center"
@@ -150,8 +210,8 @@ export default function Home() {
                 </div>
               )}
             </div>
-            <a className="mr-10 hover:text-purple-400">Pricing Plan</a>
-            <a className="hover:text-purple-400">Resources</a>
+            <a className="mr-10 hover:text-gray-900">Pricing Plan</a>
+            <a className="hover:text-gray-900">Resources</a>
           </nav>
           <button className="inline-flex items-center bg-purple-600 border-0 py-1 px-3 focus:outline-none hover:bg-purple-700 rounded text-base mt-4 md:mt-0 text-white">
             Register your Business
@@ -166,20 +226,20 @@ export default function Home() {
         <div className="flex flex-col md:flex-row">
           {/* Left Column */}
           <div className="w-full md:w-1/2 bg-purple-700 text-white p-8">
-            <h1 className="text-4xl font-bold mb-4">Start, Grow, and Succeed with Our Expert Legal Services</h1>
-            <p className="mb-6">We simplify the complexities so you can concentrate on your vision.</p>
+            <h1 className="text-4xl font-bold mb-4">One-Person Incorporation</h1>
+            <p className="mb-6">Empower Your Solo Venture with Seamless OPC Registration Services.</p>
             <ul className="space-y-2">
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                Collect signatures, scan IDs, and print badges
+                Effortless Setup for Solo Entrepreneurs
               </li>
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                Maximize compliance across your facilities
+                All-Inclusive Services: Professional Tax, Domain Registration
               </li>
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                Add & adjust check-in requirements
+                Customized Benefits to Grow and Protect Your Business
               </li>
             </ul>
           </div>
@@ -221,94 +281,123 @@ export default function Home() {
           </div>
         </div>
 
-        <section className="py-12 px-4 max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800">All Services</h2>
-          
-          {/* Service Tags */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <button className="px-4 py-2 rounded-full bg-purple-600 text-white hover:bg-purple-700">Startup Incorporation</button>
-            <Link href="/NewPage2">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">Private Limited Incorporation</button>
-            </Link>
-            <Link href="/NewPage3">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">One Person Incorporation</button>
-            </Link>
-            <Link href="/NewPage4">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">LLP Registration</button>
-            </Link>
-            <Link href="/NewPage5">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">GST Registration</button>
-            </Link>
-            <Link href="/NewPage6">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">MSME Registration</button>
-            </Link>
-            <Link href="/NewPage7">
-              <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100">ISO Certification</button>
-            </Link>
-            <button className="px-4 py-2 rounded-full border border-purple-600 text-purple-600 hover:bg-purple-100" disabled>Coming Soon</button>
+        <div className="container mx-auto px-4 py-16">
+          <h2 className="text-3xl font-bold text-center text-purple-900 mb-4">Here's How It Works</h2>
+          <p className="text-center text-gray-600 mb-12">Get your Company Registration in 3 steps</p>
+      
+          <div className="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-12">
+            {steps.map((step, index) => (
+              <div key={index} className="flex flex-col items-center max-w-xs">
+                <div>
+                  <Image 
+                    src={step.imageSrc} 
+                    alt={step.title}
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 object-contain"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-purple-900 mb-2 text-center">{step.title}</h3>
+                <p className="text-center text-gray-600">{step.description}</p>
+                {index < steps.length - 1 && (
+                  <div className="hidden md:block">
+                    <div className="w-12 h-1 bg-purple-300 mt-8 mx-auto"></div>
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
-          
-          {/* Service Cards */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Pvt. Ltd. Incorporation Card */}
-            <div className="border rounded-lg p-6 shadow-sm hover:">
-              <div className="flex items-center mb-4">
-                <Image src="/Group.png" alt="OPC Icon" width={40} height={40} className="relative z-0"/>
-                <Image src="/Ellipse 2.png" alt="OPC Icon" width={40} height={40} className="absolute top-0 left-0 z-10" />
-                <h3 className="text-xl font-semibold ml-3">Pvt. Ltd. Incorporation</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Private limited company is popular and well known business structure it enjoys wide options to raise funds through bank loans, angel investors, venture capitalists, in comparison to LLPs and OPCs.
-              </p>
-              <button className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full mx-auto block hover:bg-purple-700">Get Started</button>
-            </div>
+        </div>
+        <div className="flex items-center justify-center pl-10 pr-10">
+          <div className="text-center px-20">
+            <h1 className="text-2xl font-bold mb-1">
+              One-Person Company Registration: A Smart Choice for Solo Entrepreneurs
+            </h1>
+            <p className="text-lg">
+              Starting a business is an exciting venture, but for solo entrepreneurs, choosing the right legal structure can be challenging. If you’re a one-person show looking to formalize your business, One-Person Company (OPC) registration might be the perfect solution. This relatively new business structure, introduced under the Companies Act, 2013, is designed specifically for individuals who want to run their business independently while enjoying the benefits of a corporate structure. In this article, we’ll dive into the essentials of One-Person Company registration, its benefits, and how BizSimpl can make the registration process hassle-free.
+            </p>
+          </div>
+        </div>
+        <div className="px-20 py-6">
+          <h2 className="text-2xl font-bold mb-4">What is a One-Person Company?</h2>
+          <p className="text-lg mb-6">
+            A One-Person Company (OPC) is a unique business entity that allows a single individual to operate as a company, offering the benefits of limited liability and a separate legal identity. Essentially, an OPC gives a solo entrepreneur the flexibility of running their own company with the added advantage of being recognized as a corporate entity. This structure is particularly beneficial for small business owners and startups who want to establish a formal business without needing multiple shareholders or partners.
+          </p>
+    
+          <h2 className="text-2xl font-bold mb-4">Benefits of One-Person Company Registration</h2>
+          <ul className="list-disc ml-5 text-lg mb-6">
+            <li className="mb-3">
+              <strong>Limited Liability Protection:</strong> One of the most significant advantages of registering as an OPC is limited liability. As the sole owner, your personal assets are protected from the liabilities of the company. This means that in case of any debts or losses, your personal wealth remains secure.
+            </li>
+            <li className="mb-3">
+              <strong>Separate Legal Entity:</strong> An OPC is a separate legal entity from its owner. This allows the company to enter into contracts, own property, and sue or be sued in its own name, providing a clear distinction between the business and the owner.
+            </li>
+            <li className="mb-3">
+              <strong>Ease of Management:</strong> Running an OPC is simpler compared to other business structures. Since there is only one shareholder, decision-making is straightforward, and there’s no need to consult with other stakeholders. This makes it easier to implement changes and manage operations efficiently.
+            </li>
+            <li className="mb-3">
+              <strong>Perpetual Succession:</strong> Unlike sole proprietorships, an OPC has perpetual succession, meaning the company continues to exist even if the owner passes away. The business can be transferred to a nominee, ensuring continuity.
+            </li>
+            <li className="mb-3">
+              <strong>Tax Benefits and Compliance:</strong> OPCs are taxed as private limited companies, which means they can take advantage of various deductions and benefits available to corporate entities. Additionally, compliance requirements for OPCs are less stringent than for larger companies, making it easier for solo entrepreneurs to manage.
+            </li>
+          </ul>
+    
+          <h2 className="text-2xl font-bold mb-4">Steps to Register a One-Person Company</h2>
+          <ol className="list-decimal ml-5 text-lg mb-6">
+            <li className="mb-3">
+              <strong>Obtain a Digital Signature Certificate (DSC):</strong> The first step is to acquire a DSC for the proposed director. This digital signature will be used to sign electronic documents during the registration process.
+            </li>
+            <li className="mb-3">
+              <strong>Apply for Director Identification Number (DIN):</strong> The sole director must apply for a DIN, which is a unique identification number issued by the Ministry of Corporate Affairs (MCA).
+            </li>
+            <li className="mb-3">
+              <strong>Name Reservation:</strong> Choose a unique name for your OPC and reserve it through the MCA portal. The name should comply with naming guidelines to avoid any rejections.
+            </li>
+            <li className="mb-3">
+              <strong>Draft and File Incorporation Documents:</strong> Prepare the Memorandum of Association (MOA) and Articles of Association (AOA) for your OPC, which outline the company’s objectives and internal rules. These documents, along with the incorporation form, must be submitted to the Registrar of Companies (ROC).
+            </li>
+            <li className="mb-3">
+              <strong>Incorporation Certificate:</strong> Once the documents are approved, the ROC issues an incorporation certificate, officially recognizing your business as an OPC.
+            </li>
+            <li className="mb-3">
+              <strong>Apply for PAN and TAN:</strong> Lastly, apply for a Permanent Account Number (PAN) and Tax Deduction and Collection Account Number (TAN) for your company to handle tax-related matters.
+            </li>
+          </ol>
+    
+          <h2 className="text-2xl font-bold mb-4">Why Choose BizSimpl for OPC Registration?</h2>
+          <p className="text-lg mb-6">
+            Navigating the legal complexities of OPC registration can be daunting, especially for first-time entrepreneurs. That’s where BizSimpl comes in. With their expert guidance, BizSimpl ensures that your OPC registration process is smooth, efficient, and error-free. They handle all the intricate details, from document preparation to filing, so you can focus on building your business without worrying about the legal formalities.
+          </p>
+    
+          <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
+          <p className="text-lg">
+            One-Person Company registration is an excellent choice for solo entrepreneurs who want to enjoy the benefits of a corporate structure while retaining full control over their business. With limited liability, ease of management, and the potential for future growth, an OPC provides a solid foundation for your entrepreneurial journey. By partnering with BizSimpl, you can streamline the registration process and set your business on the path to success with confidence. Don’t hesitate—get your OPC registration done today and start reaping the benefits of this powerful business structure.
+          </p>
+        </div>
 
-            {/* OPC Incorporation Card */}
-            <div className="border rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <Image src="/Object.png" alt="OPC Icon" width={40} height={40} className="relative z-0"/>
-                <Image src="/Ellipse 2.png" alt="OPC Icon" width={40} height={40} className="absolute top-0 left-0 z-10" />
-                <h3 className="text-xl font-semibold ml-3">OPC Incorporation</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                The one person company helps startup entrepreneurs they can approach angel investors, venture capitalists for funding and easily convert their OPC into multi shareholder private limited company.
-              </p>
-              <button className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full mx-auto block hover:bg-purple-700">Get Started</button>
-            </div>
-
-            {/* LLP Incorporation Card */}
-            <div className="border rounded-lg p-6 shadow-sm">
-              <div className="flex items-center mb-4">
-                <Image src="/Objects.png" alt="OPC Icon" width={40} height={40} className="relative z-0"/>
-                <Image src="/Ellipse 2.png" alt="OPC Icon" width={40} height={40} className="absolute top-0 left-0 z-10" />
-                <h3 className="text-xl font-semibold ml-3">LLP Incorporation</h3>
-              </div>
-              <p className="text-gray-600 mb-4">
-                Limited liability partnership is the modern business option for traditional firms operating as partnership.
-              </p>
-              <button className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full mx-auto block hover:bg-purple-700">Get Started</button>
+        <section className="py-16">
+          <div className="max-w-6xl mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Clients</h2>
+            <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
+              {clients.map((client, index) => (
+                <div key={index} className="flex items-center justify-center">
+                  <Image
+                    src={client.logo}
+                    alt={client.name}
+                    width={120}
+                    height={60}
+                    objectFit="contain"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>
-
-        {/* Testimonial Section */}
         <section className="py-16 bg-gray-50">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-gray-800">Don't just take it from us,<br />but from <span className="text-purple-600">our users</span></h2>
-            
-            <div className="flex justify-end mb-1">
-              <div>
-                <p className="text-4xl font-bold">2k+</p>
-                <p className="text-gray-600 pr-4">Happy Customers</p>
-              </div>
-              <div>
-                <p className="text-4xl font-bold">4.6</p>
-                <p className="text-gray-600">From 12 rating</p>
-              </div>
-            </div>
-
+        <div className="max-w-6xl mx-auto px-4 py-5">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">What customers are saying</h3>
+              <h3 className="flex align-center justify-center text-2xl font-semibold mb-6">What customers are saying</h3>
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <p className="text-gray-700 mb-4">
                   {testimonials[activeTestimonial].quote}
@@ -334,69 +423,24 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-        <div className="bg-purple-700 text-white py-10 px-6 flex justify-between items-center">
-          <h2 className="text-xl font-semibold">Looking for a premium accounting for your business?</h2>
-          <button className="bg-white text-purple-700 px-4 py-2 rounded-full font-semibold">
-            Get Started
-          </button>
-        </div>
-        <section className="py-16">
-          <div className="max-w-6xl mx-auto px-4">
-            <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Clients</h2>
-            <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
-              {clients.map((client, index) => (
-                <div key={index} className="flex items-center justify-center" style={{ height: '80px', width: '160px' }}>
-                  <Image
-                    src={client.logo}
-                    alt={client.name}
-                    width={64}
-                    height={64}
-                    objectFit="contain"
-                 />
-               </div>
+         </section>
+         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-extrabold text-center text-gray-900 mb-1">FAQ</h2>
+            <p className="text-xl text-center text-gray-500 mb-8">
+              Learn more about BizSimpl by user Questions
+            </p>
+            <div className="mt-12">
+              {faqData.map((item, index) => (
+                <FAQItem
+                  key={index}
+                  question={item.question}
+                  answer={item.answer}
+                  isOpen={index === openIndex}
+                  toggleOpen={() => setOpenIndex(index === openIndex ? -1 : index)}
+                />
               ))}
             </div>
           </div>
-        </section>
-        <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-2 text-center text-gray-800">Resources</h2>
-          <p className="text-center text-gray-600 mb-8">The latest news, technologies, and resources from our team.</p>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {resources.map((resource, index) => (
-              <div key={index} className="bg-white rounded-lg overflow-hidden shadow-md">
-                <Image
-                  src={resource.image}
-                  alt={resource.title}
-                  width={400}
-                  height={200}
-                  objectFit="cover"
-                />
-                <div className="p-6">
-                  <p className="text-sm text-gray-500 mb-2">{resource.category}</p>
-                  <h3 className="text-xl font-semibold mb-2">{resource.title}</h3>
-                  <p className="text-gray-600 mb-4">{resource.description}</p>
-                  <a href={resource.link} className="text-purple-600 font-semibold inline-flex items-center">
-                    Read Now
-                    <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14"></path>
-                      <path d="M12 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-          
-          <div className="text-center mt-8">
-            <button className="bg-white text-purple-600 border border-purple-600 px-6 py-2 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition duration-300">
-              View all resources
-            </button>
-          </div>
-        </div>
-      </section>
       </main>
       <footer className="bg-[#1E293B] text-white">
         <div className="bg-purple-700 py-6 px-4">
@@ -436,17 +480,17 @@ export default function Home() {
             <a href="#" className="hover:text-purple-400">Pricing Plan</a>
           </nav>
           <div className="flex justify-center space-x-6 mb-8">
-          <a href="#">
-              <Image src="/List1.png" alt="Instagram" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List1.png" alt="Instagram" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List2.png" alt="Facebook" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List2.png" alt="Facebook" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List3.png" alt="LinkedIn" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List3.png" alt="LinkedIn" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List4.png" alt="Twitter" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List4.png" alt="Twitter" width={24} height={24} />
             </a>
           </div>
         </div>

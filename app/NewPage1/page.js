@@ -111,7 +111,7 @@ export default function Home() {
             />
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-10 hover:text-purple-400">About Us</a>
+            <a className="mr-10 hover:text-gray-900">About Us</a>
             <div className="relative" ref={dropdownRef}>
               <button
                 className="mr-10 hover:text-purple-400 flex items-center"
@@ -150,8 +150,8 @@ export default function Home() {
                 </div>
               )}
             </div>
-            <a className="mr-10 hover:text-purple-400">Pricing Plan</a>
-            <a className="hover:text-purple-400">Resources</a>
+            <a className="mr-10 hover:text-gray-900">Pricing Plan</a>
+            <a className="hover:text-gray-900">Resources</a>
           </nav>
           <button className="inline-flex items-center bg-purple-600 border-0 py-1 px-3 focus:outline-none hover:bg-purple-700 rounded text-base mt-4 md:mt-0 text-white">
             Register your Business
@@ -346,15 +346,15 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Clients</h2>
             <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
               {clients.map((client, index) => (
-                <div key={index} className="flex items-center justify-center" style={{ height: '80px', width: '160px' }}>
+                <div key={index} className="flex items-center justify-center">
                   <Image
                     src={client.logo}
                     alt={client.name}
                     width={64}
                     height={64}
                     objectFit="contain"
-                 />
-               </div>
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -436,17 +436,17 @@ export default function Home() {
             <a href="#" className="hover:text-purple-400">Pricing Plan</a>
           </nav>
           <div className="flex justify-center space-x-6 mb-8">
-          <a href="#">
-              <Image src="/List1.png" alt="Instagram" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List1.png" alt="Instagram" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List2.png" alt="Facebook" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List2.png" alt="Facebook" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List3.png" alt="LinkedIn" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List3.png" alt="LinkedIn" width={24} height={24} />
             </a>
-            <a href="#">
-              <Image src="/List4.png" alt="Twitter" width={35} height={35} />
+            <a href="#" className="bg-[#2D3748] p-2 rounded-full">
+              <Image src="/List4.png" alt="Twitter" width={24} height={24} />
             </a>
           </div>
         </div>
@@ -455,3 +455,6 @@ export default function Home() {
   );
 };
 
+
+  
+  

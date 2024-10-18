@@ -5,6 +5,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
 export default function Home() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -102,7 +103,7 @@ export default function Home() {
       <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center pr-20">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 pl-20">
-            <Image
+            <img
               src="/bcs_logo-removebg-preview.png" 
               alt="BCS Logo"
               width={140} 
@@ -111,7 +112,7 @@ export default function Home() {
             />
           </a>
           <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-10 hover:text-purple-400">About Us</a>
+            <a className="mr-10 hover:text-gray-900">About Us</a>
             <div className="relative" ref={dropdownRef}>
               <button
                 className="mr-10 hover:text-purple-400 flex items-center"
@@ -150,8 +151,8 @@ export default function Home() {
                 </div>
               )}
             </div>
-            <a className="mr-10 hover:text-purple-400">Pricing Plan</a>
-            <a className="hover:text-purple-400">Resources</a>
+            <a className="mr-10 hover:text-gray-900">Pricing Plan</a>
+            <a className="hover:text-gray-900">Resources</a>
           </nav>
           <button className="inline-flex items-center bg-purple-600 border-0 py-1 px-3 focus:outline-none hover:bg-purple-700 rounded text-base mt-4 md:mt-0 text-white">
             Register your Business

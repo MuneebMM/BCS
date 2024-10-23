@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 
 const NavBar = () => {
@@ -35,7 +36,7 @@ const NavBar = () => {
         <header className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center pr-20">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 pl-20">
-            <img
+            <Image
               src="/bcs_logo-removebg-preview.png" 
               alt="BCS Logo"
               width={140} 

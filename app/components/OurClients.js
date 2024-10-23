@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function OurClients() {
     const clients = [
         { name: "Client 1", logo: "/Bytebox Media.png" },
@@ -17,7 +19,7 @@ export default function OurClients() {
           <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
             {clients.map((client, index) => (
               <div key={index} className="flex items-center justify-center">
-                <img
+                <Image
                   src={client.logo}
                   alt={client.name}
                   width={120}

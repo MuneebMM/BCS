@@ -1,7 +1,7 @@
 'our clients'
 
 import React, { useState, useRef, useEffect } from 'react';
-
+import Image from 'next/image';
 
 
 export default function Howitworks() {
@@ -32,7 +32,7 @@ export default function Howitworks() {
           {steps.map((step, index) => (
             <div key={index} className="flex flex-col items-center max-w-xs">
               <div>
-                <img 
+                <Image 
                   src={step.imageSrc} 
                   alt={step.title}
                   width={64}

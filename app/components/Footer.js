@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Footer() {
     return (
         <footer className="bg-[#1E293B] text-white">
@@ -11,7 +13,7 @@ export default function Footer() {
         </div>
         <div className="max-w-6xl mx-auto py-12 px-4">
           <div className="flex flex-col items-center mb-8">
-            <img
+            <Image
               src="/Group 1.png"
               alt="BCS Logo"
               width={140}

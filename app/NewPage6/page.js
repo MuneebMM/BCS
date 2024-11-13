@@ -81,24 +81,23 @@ export default function Home() {
         </div>
 
         <Howitworks/>
-        <div className="flex items-center justify-center pl-10 pr-10">
-          <div className="text-center px-20">
-            <h1 className="text-2xl font-bold mb-1">
-              MSME Registration: Empowering Small Businesses for Big Opportunities
-            </h1>
-            <p className="text-lg">
-              In India, the Micro, Small, and Medium Enterprises (MSME) sector plays a pivotal role in the country’s economy, contributing significantly to employment, production, and exports. If you’re running a small or medium-sized enterprise, obtaining MSME registration is a crucial step that can open up a wealth of opportunities for your business. This registration not only provides access to numerous government schemes but also helps in enhancing your business’s credibility and growth potential. In this article, we’ll explore the importance of MSME registration, the benefits it offers, and how BizSimpl can assist you in navigating the registration process smoothly.
-            </p>
-          </div>
+        
+        <div className="text-center px-4 sm:px-10 md:px-20">
+          <h1 className="text-xl sm:text-2xl font-bold mb-1">
+            MSME Registration: Empowering Small Businesses for Big Opportunities
+          </h1>
+          <p className="text-base sm:text-lg">
+            In India, the Micro, Small, and Medium Enterprises (MSME) sector plays a pivotal role in the country’s economy, contributing significantly to employment, production, and exports. If you’re running a small or medium-sized enterprise, obtaining MSME registration is a crucial step that can open up a wealth of opportunities for your business. This registration not only provides access to numerous government schemes but also helps in enhancing your business’s credibility and growth potential. In this article, we’ll explore the importance of MSME registration, the benefits it offers, and how BizSimpl can assist you in navigating the registration process smoothly.
+          </p>
         </div>
-        <div className="px-20 py-6">
-          <h1 className="text-2xl font-bold mb-4">What is MSME Registration?</h1>
-          <p className="text-lg mb-6">
+        <div className="px-4 sm:px-10 md:px-20 py-6">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4">What is MSME Registration?</h1>
+          <p className="text-base sm:text-lg mb-6">
             MSME registration is a government initiative aimed at classifying and supporting small and medium-sized businesses. This registration is issued by the Ministry of Micro, Small, and Medium Enterprises and is available to businesses involved in manufacturing, production, processing, or preservation of goods and services. The registration is voluntary but highly beneficial, as it grants access to a range of subsidies, incentives, and schemes designed to promote business growth and sustainability.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Why is MSME Registration Important?</h2>
-          <ul className="list-disc ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Why is MSME Registration Important?</h2>
+          <ul className="list-disc ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Access to Government Schemes and Subsidies:</strong> Registered MSMEs can benefit from a variety of government schemes, including low-interest loans, capital investment subsidies, and tax rebates. These financial incentives can significantly reduce the cost of doing business and improve profitability.
             </li>
@@ -115,9 +114,9 @@ export default function Home() {
               <strong>Enhanced Market Access:</strong> MSME registration enhances the credibility of your business, making it more attractive to customers, suppliers, and potential business partners. It also opens doors to new markets, both domestically and internationally.
             </li>
           </ul>
-    
-          <h2 className="text-2xl font-bold mb-4">Who Should Register as an MSME?</h2>
-          <ul className="list-disc ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Who Should Register as an MSME?</h2>
+          <ul className="list-disc ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Micro Enterprises:</strong> Investment in plant and machinery or equipment does not exceed ₹1 crore, and turnover does not exceed ₹5 crores.
             </li>
@@ -128,12 +127,12 @@ export default function Home() {
               <strong>Medium Enterprises:</strong> Investment in plant and machinery or equipment does not exceed ₹50 crores, and turnover does not exceed ₹250 crores.
             </li>
           </ul>
-          <p className="text-lg mb-6">
+          <p className="text-base sm:text-lg mb-6">
             Businesses that fit within these categories, whether they are engaged in manufacturing, trading, or service provision, are eligible for MSME registration.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Steps to Register as an MSME</h2>
-          <ol className="list-decimal ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Steps to Register as an MSME</h2>
+          <ol className="list-decimal ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Prepare Necessary Documents:</strong> Before starting the registration process, ensure that you have all required documents, such as your Aadhar card, PAN card, and business address proof.
             </li>
@@ -150,17 +149,18 @@ export default function Home() {
               <strong>Receive the Udyam Registration Certificate:</strong> Upon successful submission and verification, you’ll receive your Udyam Registration certificate. This certificate includes a unique identification number (Udyam Registration Number) and serves as proof of your MSME status.
             </li>
           </ol>
-    
-          <h2 className="text-2xl font-bold mb-4">Why Choose BizSimpl for MSME Registration?</h2>
-          <p className="text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Why Choose BizSimpl for MSME Registration?</h2>
+          <p className="text-base sm:text-lg mb-6">
             Navigating the MSME registration process can be complex, especially for first-time applicants. This is where BizSimpl comes in. BizSimpl offers expert assistance to ensure that your registration is completed accurately and efficiently. With their support, you can avoid common pitfalls and ensure that your business is classified correctly, maximizing the benefits available to you.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
-          <p className="text-lg">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Conclusion</h2>
+          <p className="text-base sm:text-lg">
             MSME registration is a powerful tool for small and medium-sized businesses looking to grow and thrive in a competitive market. By obtaining this registration, you not only gain access to valuable government schemes and financial incentives but also enhance your business’s credibility and market access. With BizSimpl’s expert guidance, the registration process becomes a breeze, allowing you to focus on what matters most—building your business and achieving your goals. Don’t miss out on the benefits of MSME registration. Take the step today and empower your business for success.
           </p>
         </div>
+
 
         <OurClients/>
         <section className="py-16 bg-gray-50">

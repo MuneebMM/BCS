@@ -81,34 +81,33 @@ export default function Home() {
         </div>
 
         <Howitworks/>
-        <div className="flex items-center justify-center pl-10 pr-10">
-          <div className="text-center px-20">
-            <h1 className="text-2xl font-bold mb-1">
+        <div className="px-4 sm:px-10 md:px-20">
+            <h1 className="text-xl sm:text-2xl font-bold mb-4">
               Pvt. Ltd. Company Registration: Your Pathway to a Structured Business
             </h1>
-            <p className="text-lg">
+            <p className="text-base sm:text-lg mb-4">
               If you’re an entrepreneur looking to start a new venture in India, one of the most reliable and popular business structures is a Private Limited (Pvt. Ltd.) Company. Registering your business as a Pvt. Ltd. Company not only provides a solid legal foundation but also offers numerous advantages that can set your business up for success. In this guide, we’ll walk you through the essentials of Pvt. Ltd. Company registration, the benefits it offers, and why you should consider working with BizSimpl to simplify the process.
             </p>
-          </div>
         </div>
-        <div className="px-20">
-          <h1 className="text-2xl font-bold mb-4">
+
+        <div className="px-4 sm:px-10 md:px-20">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4">
             What is Pvt. Ltd. Company Registration?
           </h1>
-          <p className="text-lg mb-4">
+          <p className="text-base sm:text-lg mb-4">
             Pvt. Ltd. Company registration is the process of legally incorporating your business under the Companies Act, 2013. A Pvt. Ltd. Company is a separate legal entity, meaning it has its own identity distinct from its shareholders. This structure is ideal for small to medium-sized businesses looking to grow, attract investors, and establish credibility.
           </p>
-          <p className="text-lg">
+          <p className="text-base sm:text-lg">
             A Pvt. Ltd. Company can have up to 200 shareholders and must have at least two directors. It offers limited liability protection, meaning that the personal assets of the shareholders are protected from the company’s liabilities. This makes it a safer option for business owners who want to protect their personal wealth while running a business.
           </p>
         </div>
 
-        <div className="px-20 py-6">
-          <h1 className="text-2xl font-bold mb-4">
+        <div className="px-4 py-4 sm:px-10 md:px-20 md:py-6">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4">
             Benefits of Registering a Pvt. Ltd. Company
           </h1>
-
-          <ul className="list-disc ml-5 text-lg mb-6">
+        
+          <ul className="list-disc ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Limited Liability Protection:</strong> One of the key benefits of a Pvt. Ltd. Company is that the liability of shareholders is limited to the amount of their investment in the company. This means personal assets are safeguarded against any financial risks faced by the business.
             </li>
@@ -125,10 +124,10 @@ export default function Home() {
               <strong>Tax Benefits:</strong> Pvt. Ltd. Companies are eligible for various tax benefits and deductions under the Income Tax Act, 1961, which can significantly reduce the tax burden on the business.
             </li>
           </ul>
-
-           <h2 className="text-2xl font-bold mb-4">Steps to Register a Pvt. Ltd. Company</h2>
-
-          <ol className="list-decimal ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Steps to Register a Pvt. Ltd. Company</h2>
+        
+          <ol className="list-decimal ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Obtain Digital Signature Certificates (DSC):</strong> The first step is to obtain DSCs for all directors, which are used to sign electronic documents.
             </li>
@@ -148,19 +147,20 @@ export default function Home() {
               <strong>Apply for PAN and TAN:</strong> Finally, apply for a Permanent Account Number (PAN) and Tax Deduction and Collection Account Number (TAN) for your company.
             </li>
           </ol>
-
-          <h2 className="text-2xl font-bold mb-4">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">
             Why Choose BizSimpl for Pvt. Ltd. Company Registration?
           </h2>
-          <p className="text-lg mb-6">
+          <p className="text-base sm:text-lg mb-6">
             Navigating the legal intricacies of company registration can be overwhelming, especially for first-time entrepreneurs. That’s where BizSimpl comes in. With their expert guidance, you can simplify the registration process and ensure that your company is set up correctly from the start. BizSimpl offers comprehensive support, from choosing the right business structure to filing the necessary documents, making the entire process seamless and stress-free.
           </p>
-
-          <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
-          <p className="text-lg">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Conclusion</h2>
+          <p className="text-base sm:text-lg">
             Registering your business as a Pvt. Ltd. Company is a smart move that offers numerous advantages, including limited liability, ease of fundraising, and enhanced credibility. By partnering with BizSimpl, you can navigate the registration process with ease, allowing you to focus on what really matters—growing your business. Don’t delay—start your Pvt. Ltd. Company registration today and pave the way for your business’s success.
           </p>
         </div>
+
 
 
         <OurClients/>

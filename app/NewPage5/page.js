@@ -81,24 +81,24 @@ export default function Home() {
         </div>
 
         <Howitworks/>
-        <div className="flex items-center justify-center pl-10 pr-10">
-          <div className="text-center px-20">
-            <h1 className="text-2xl font-bold mb-1">
-              GST Registration: A Simple Guide for Your Business
-            </h1>
-            <p className="text-lg">
-              In today’s business environment, ensuring compliance with tax laws is crucial. One of the most important steps for any business in India is obtaining Goods and Services Tax (GST) registration. Whether you’re a startup, a small business, or a growing enterprise, registering for GST is not just a legal requirement but also a smart business move. In this article, we’ll walk you through the essentials of GST registration and explain why partnering with BizSimpl can make the process straightforward and hassle-free.
-            </p>
-          </div>
+        <div className="px-4 sm:px-10 md:px-20">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4">
+            GST Registration: A Simple Guide for Your Business
+          </h1>
+          <p className="text-base sm:text-lg mb-4">
+            In today’s business environment, ensuring compliance with tax laws is crucial. One of the most important steps for any business in India is obtaining Goods and Services Tax (GST) registration. Whether you’re a startup, a small business, or a growing enterprise, registering for GST is not just a legal requirement but also a smart business move. In this article, we’ll walk you through the essentials of GST registration and explain why partnering with BizSimpl can make the process straightforward and hassle-free.
+          </p>
         </div>
-        <div className="px-20 py-6">
-          <h1 className="text-2xl font-bold mb-4">What is GST Registration?</h1>
-          <p className="text-lg mb-6">
+        
+        
+        <div className="px-4 sm:px-10 md:px-20 py-4 sm:py-6">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4">What is GST Registration?</h1>
+          <p className="text-base sm:text-lg mb-6">
             GST registration is the process by which a business gets registered under the Goods and Services Tax Act in India. Once registered, the business receives a unique GST Identification Number (GSTIN), which is used to collect and remit taxes on behalf of the government. This registration is mandatory for businesses with an annual turnover exceeding a certain threshold, as well as for those involved in interstate commerce, e-commerce, and other specified categories.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Why is GST Registration Important?</h2>
-          <ul className="list-disc ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Why is GST Registration Important?</h2>
+          <ul className="list-disc ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Legal Compliance:</strong> GST registration is mandatory for businesses that meet the prescribed turnover threshold. Failing to register can result in penalties and legal complications.
             </li>
@@ -112,17 +112,17 @@ export default function Home() {
               <strong>Enhanced Credibility:</strong> A GST-registered business is seen as more credible and trustworthy, which can attract more customers and business partners. It also instills confidence in your customers, knowing that your business complies with government regulations.
             </li>
           </ul>
-    
-          <h2 className="text-2xl font-bold mb-4">Who Needs GST Registration?</h2>
-          <ul className="list-disc ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Who Needs GST Registration?</h2>
+          <ul className="list-disc ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">Businesses with an annual turnover exceeding ₹20 lakh (₹10 lakh in some states).</li>
             <li className="mb-3">Entities involved in interstate trade.</li>
             <li className="mb-3">E-commerce operators and online sellers.</li>
             <li className="mb-3">Service providers like consultants, freelancers, and digital marketers if their turnover exceeds the threshold.</li>
           </ul>
-    
-          <h2 className="text-2xl font-bold mb-4">Steps to Register for GST</h2>
-          <ol className="list-decimal ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Steps to Register for GST</h2>
+          <ol className="list-decimal ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Gather Required Documents:</strong> Before you begin, ensure you have all necessary documents, including your PAN card, Aadhaar card, business address proof, and bank account details.
             </li>
@@ -142,14 +142,14 @@ export default function Home() {
               <strong>Receive Your GSTIN:</strong> Upon successful verification, you’ll receive your GSTIN, which you can use for all future tax filings and business transactions.
             </li>
           </ol>
-    
-          <h2 className="text-2xl font-bold mb-4">Why Choose BizSimpl for GST Registration?</h2>
-          <p className="text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Why Choose BizSimpl for GST Registration?</h2>
+          <p className="text-base sm:text-lg mb-6">
             Navigating the complexities of GST registration can be overwhelming, especially for new businesses. BizSimpl offers expert assistance to ensure that your registration process is smooth and error-free. With their guidance, you can focus on growing your business while they handle the technicalities of tax compliance.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
-          <p className="text-lg">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Conclusion</h2>
+          <p className="text-base sm:text-lg">
             GST registration is a crucial step for any business operating in India. It not only ensures legal compliance but also opens up new avenues for growth and expansion. By partnering with BizSimpl, you can make the GST registration process quick and hassle-free, allowing you to concentrate on what really matters—running your business successfully.
             <br />
             Take the first step towards a compliant and thriving business by getting your GST registration done today!

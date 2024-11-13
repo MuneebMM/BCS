@@ -81,24 +81,24 @@ export default function Home() {
         </div>
 
         <Howitworks/>
-        <div className="flex items-center justify-center pl-10 pr-10">
-          <div className="text-center px-20">
-            <h1 className="text-2xl font-bold mb-1">
-              One-Person Company Registration: A Smart Choice for Solo Entrepreneurs
-            </h1>
-            <p className="text-lg">
-              Starting a business is an exciting venture, but for solo entrepreneurs, choosing the right legal structure can be challenging. If you’re a one-person show looking to formalize your business, One-Person Company (OPC) registration might be the perfect solution. This relatively new business structure, introduced under the Companies Act, 2013, is designed specifically for individuals who want to run their business independently while enjoying the benefits of a corporate structure. In this article, we’ll dive into the essentials of One-Person Company registration, its benefits, and how BizSimpl can make the registration process hassle-free.
-            </p>
-          </div>
+        
+        <div className="px-4 sm:px-10 md:px-20">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4">
+            One-Person Company Registration: A Smart Choice for Solo Entrepreneurs
+          </h1>
+          <p className="text-base sm:text-lg mb-4">
+            Starting a business is an exciting venture, but for solo entrepreneurs, choosing the right legal structure can be challenging. If you’re a one-person show looking to formalize your business, One-Person Company (OPC) registration might be the perfect solution. This relatively new business structure, introduced under the Companies Act, 2013, is designed specifically for individuals who want to run their business independently while enjoying the benefits of a corporate structure. In this article, we’ll dive into the essentials of One-Person Company registration, its benefits, and how BizSimpl can make the registration process hassle-free.
+          </p>
         </div>
-        <div className="px-20 py-6">
-          <h2 className="text-2xl font-bold mb-4">What is a One-Person Company?</h2>
-          <p className="text-lg mb-6">
+        
+        <div className="px-4 sm:px-10 md:px-20 py-4 sm:py-6">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">What is a One-Person Company?</h2>
+          <p className="text-base sm:text-lg mb-6">
             A One-Person Company (OPC) is a unique business entity that allows a single individual to operate as a company, offering the benefits of limited liability and a separate legal identity. Essentially, an OPC gives a solo entrepreneur the flexibility of running their own company with the added advantage of being recognized as a corporate entity. This structure is particularly beneficial for small business owners and startups who want to establish a formal business without needing multiple shareholders or partners.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Benefits of One-Person Company Registration</h2>
-          <ul className="list-disc ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Benefits of One-Person Company Registration</h2>
+          <ul className="list-disc ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Limited Liability Protection:</strong> One of the most significant advantages of registering as an OPC is limited liability. As the sole owner, your personal assets are protected from the liabilities of the company. This means that in case of any debts or losses, your personal wealth remains secure.
             </li>
@@ -115,9 +115,9 @@ export default function Home() {
               <strong>Tax Benefits and Compliance:</strong> OPCs are taxed as private limited companies, which means they can take advantage of various deductions and benefits available to corporate entities. Additionally, compliance requirements for OPCs are less stringent than for larger companies, making it easier for solo entrepreneurs to manage.
             </li>
           </ul>
-    
-          <h2 className="text-2xl font-bold mb-4">Steps to Register a One-Person Company</h2>
-          <ol className="list-decimal ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Steps to Register a One-Person Company</h2>
+          <ol className="list-decimal ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Obtain a Digital Signature Certificate (DSC):</strong> The first step is to acquire a DSC for the proposed director. This digital signature will be used to sign electronic documents during the registration process.
             </li>
@@ -137,17 +137,18 @@ export default function Home() {
               <strong>Apply for PAN and TAN:</strong> Lastly, apply for a Permanent Account Number (PAN) and Tax Deduction and Collection Account Number (TAN) for your company to handle tax-related matters.
             </li>
           </ol>
-    
-          <h2 className="text-2xl font-bold mb-4">Why Choose BizSimpl for OPC Registration?</h2>
-          <p className="text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Why Choose BizSimpl for OPC Registration?</h2>
+          <p className="text-base sm:text-lg mb-6">
             Navigating the legal complexities of OPC registration can be daunting, especially for first-time entrepreneurs. That’s where BizSimpl comes in. With their expert guidance, BizSimpl ensures that your OPC registration process is smooth, efficient, and error-free. They handle all the intricate details, from document preparation to filing, so you can focus on building your business without worrying about the legal formalities.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
-          <p className="text-lg">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Conclusion</h2>
+          <p className="text-base sm:text-lg">
             One-Person Company registration is an excellent choice for solo entrepreneurs who want to enjoy the benefits of a corporate structure while retaining full control over their business. With limited liability, ease of management, and the potential for future growth, an OPC provides a solid foundation for your entrepreneurial journey. By partnering with BizSimpl, you can streamline the registration process and set your business on the path to success with confidence. Don’t hesitate—get your OPC registration done today and start reaping the benefits of this powerful business structure.
           </p>
         </div>
+
 
         <OurClients/>
         <section className="py-16 bg-gray-50">

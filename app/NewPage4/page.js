@@ -81,27 +81,28 @@ export default function Home() {
         </div>
 
         <Howitworks/>
-        <div className="flex items-center justify-center pl-10 pr-10">
-          <div className="text-center px-20">
-            <h1 className="text-2xl font-bold mb-1">
+        <div className="flex items-center justify-center px-4 sm:px-10 md:px-20">
+          <div className="px-4 sm:px-10 md:px-20">
+            <h1 className="text-xl sm:text-2xl font-bold mb-4">
               LLP Registration: A Modern Approach to Business Partnership
             </h1>
-            <p className="text-lg">
+            <p className="text-base sm:text-lg mb-4">
               In today’s dynamic business environment, entrepreneurs are constantly seeking business structures that offer both flexibility and legal protection. Limited Liability Partnership (LLP) registration is an increasingly popular choice among small and medium-sized enterprises in India. Combining the benefits of both a company and a partnership, an LLP is ideal for professionals and business owners who want to manage their operations with a mix of limited liability and operational flexibility. This article will guide you through the essentials of LLP registration, the benefits it offers, and how BizSimpl can help make the registration process seamless.
             </p>
           </div>
         </div>
-        <div className="px-20 py-6">
-          <h1 className="text-2xl font-bold mb-4">What is LLP Registration?</h1>
-          <p className="text-lg mb-6">
+        
+        <div className="px-4 sm:px-10 md:px-20 py-4 sm:py-6">
+          <h1 className="text-xl sm:text-2xl font-bold mb-4">What is LLP Registration?</h1>
+          <p className="text-base sm:text-lg mb-6">
             LLP registration refers to the process of legally establishing a Limited Liability Partnership under the LLP Act, 2008. An LLP is a unique business structure that allows partners to enjoy the benefits of limited liability, much like shareholders in a private limited company, while also offering the operational flexibility of a traditional partnership.
           </p>
-          <p className="text-lg mb-6">
+          <p className="text-base sm:text-lg mb-6">
             In an LLP, each partner’s liability is limited to their agreed contribution, meaning personal assets are generally protected from business debts. Additionally, an LLP has a separate legal identity from its partners, which allows the partnership to own property, enter into contracts, and sue or be sued in its own name.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Benefits of LLP Registration</h2>
-          <ul className="list-disc ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Benefits of LLP Registration</h2>
+          <ul className="list-disc ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Limited Liability Protection:</strong> One of the most significant advantages of registering as an LLP is that partners are only liable for the business’s debts up to the extent of their contributions. This protects personal assets from being used to cover business losses or liabilities.
             </li>
@@ -121,9 +122,9 @@ export default function Home() {
               <strong>Attracting Investors:</strong> LLPs can attract investment more easily than traditional partnerships due to their structured format and limited liability, making them an appealing choice for venture capitalists and other investors.
             </li>
           </ul>
-    
-          <h2 className="text-2xl font-bold mb-4">Steps to Register an LLP</h2>
-          <ol className="list-decimal ml-5 text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Steps to Register an LLP</h2>
+          <ol className="list-decimal ml-5 text-base sm:text-lg mb-6">
             <li className="mb-3">
               <strong>Obtain Digital Signature Certificate (DSC):</strong> All designated partners must have a DSC, which is used to sign documents electronically during the registration process.
             </li>
@@ -143,17 +144,18 @@ export default function Home() {
               <strong>Apply for PAN and TAN:</strong> Finally, apply for a Permanent Account Number (PAN) and Tax Deduction and Collection Account Number (TAN) for your LLP to manage tax obligations.
             </li>
           </ol>
-    
-          <h2 className="text-2xl font-bold mb-4">Why Choose BizSimpl for LLP Registration?</h2>
-          <p className="text-lg mb-6">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Why Choose BizSimpl for LLP Registration?</h2>
+          <p className="text-base sm:text-lg mb-6">
             Navigating the complexities of LLP registration can be overwhelming, especially for first-time entrepreneurs. BizSimpl offers expert assistance to ensure your registration process is efficient and error-free. With their guidance, you can avoid common pitfalls and ensure that all legal requirements are met, allowing you to focus on building and growing your business.
           </p>
-    
-          <h2 className="text-2xl font-bold mb-4">Conclusion</h2>
-          <p className="text-lg">
+        
+          <h2 className="text-xl sm:text-2xl font-bold mb-4">Conclusion</h2>
+          <p className="text-base sm:text-lg">
             LLP registration is an excellent choice for entrepreneurs and professionals seeking a business structure that offers the dual benefits of limited liability and operational flexibility. With the added advantages of tax benefits and ease of compliance, LLPs are becoming the go-to option for modern businesses in India. By partnering with BizSimpl, you can streamline the registration process and ensure that your LLP is set up correctly from the start. Don’t wait—take the first step towards forming your LLP today and position your business for success.
           </p>
         </div>
+
 
         <OurClients/>
         <section className="py-16 bg-gray-50">

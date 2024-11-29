@@ -4,7 +4,8 @@ import React, { useState, useRef, useEffect } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import NavBar from '../app/components/NavBar';
+import Footer from '../app/components/Footer';
 
 export default function Home() {
   const [isServicesOpen, setIsServicesOpen] = useState(false);
@@ -100,68 +101,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center pr-20">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 pl-20">
-            <img
-              src="/bcs_logo-removebg-preview.png" 
-              alt="BCS Logo"
-              width={140} 
-              height={45.44} 
-              priority={true} 
-            />
-          </a>
-          <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-10 hover:text-gray-900">About Us</a>
-            <div className="relative" ref={dropdownRef}>
-              <button
-                className="mr-10 hover:text-purple-400 flex items-center"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-              >
-                Service
-                <svg className={`w-4 h-4 ml-1 transition-transform duration-200 ${isServicesOpen ? 'transform rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
-              {isServicesOpen && (
-                <div
-                  className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10"
-                >
-                  <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
-                    {services.map((service, index) => (
-                      <Link
-                        key={index}
-                        href={service.href}
-                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-400 ${
-                          service.disabled ? 'opacity-50 cursor-not-allowed' : ''
-                        }`}
-                        role="menuitem"
-                        onClick={(e) => {
-                          if (service.disabled) {
-                            e.preventDefault();
-                          } else {
-                            setIsServicesOpen(false);
-                          }
-                        }}
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-            <a className="mr-10 hover:text-gray-900">Pricing Plan</a>
-            <a className="hover:text-gray-900">Resources</a>
-          </nav>
-          <button className="inline-flex items-center bg-purple-600 border-0 py-1 px-3 focus:outline-none hover:bg-purple-700 rounded text-base mt-4 md:mt-0 text-white">
-            Register your Business
-            <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-4 h-4 ml-1" viewBox="0 0 24 24">
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
-        </div>
-      </header>
+      <NavBar />
 
       <main>
         <div className="flex flex-col md:flex-row">
@@ -347,15 +287,15 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-8 text-center text-gray-800">Our Clients</h2>
             <div className="grid grid-cols-3 md:grid-cols-5 gap-8">
               {clients.map((client, index) => (
-                <div key={index} className="flex items-center justify-center" style={{ height: '80px', width: '160px' }}>
+                <div key={index} className="flex items-center justify-center">
                   <Image
                     src={client.logo}
                     alt={client.name}
                     width={64}
                     height={64}
                     objectFit="contain"
-                 />
-               </div>
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -399,59 +339,11 @@ export default function Home() {
         </div>
       </section>
       </main>
-      <footer className="bg-[#1E293B] text-white">
-        <div className="bg-purple-700 py-6 px-4">
-          <div className="max-w-6xl mx-auto flex justify-between items-center">
-            <h2 className="text-xl font-semibold">Talk to our best accounting expert now!</h2>
-            <button className="bg-white text-purple-700 px-6 py-2 rounded-full font-semibold">
-              Schedule a Meet
-            </button>
-          </div>
-        </div>
-        <div className="max-w-6xl mx-auto py-12 px-4">
-          <div className="flex flex-col items-center mb-8">
-            <Image
-              src="/Group 1.png"
-              alt="BCS Logo"
-              width={140}
-              height={45.44}
-            />
-            <div className="mt-6 relative">
-              <input
-                type="email"
-                placeholder="Join our newsletter"
-                className="bg-[#2D3748] text-white py-2 pl-4 pr-10 rounded-full w-64"
-              />
-              <button className="absolute right-2 top-1/2 transform -translate-y-1/2">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M5 12H19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M12 5L19 12L12 19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </div>
-          </div>
-          <nav className="flex justify-center space-x-8 mb-8">
-            <a href="#" className="hover:text-purple-400">Home</a>
-            <a href="#" className="hover:text-purple-400">About Us</a>
-            <a href="#" className="hover:text-purple-400">Service</a>
-            <a href="#" className="hover:text-purple-400">Pricing Plan</a>
-          </nav>
-          <div className="flex justify-center space-x-6 mb-8">
-          <a href="#">
-              <Image src="/List1.png" alt="Instagram" width={35} height={35} />
-            </a>
-            <a href="#">
-              <Image src="/List2.png" alt="Facebook" width={35} height={35} />
-            </a>
-            <a href="#">
-              <Image src="/List3.png" alt="LinkedIn" width={35} height={35} />
-            </a>
-            <a href="#">
-              <Image src="/List4.png" alt="Twitter" width={35} height={35} />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <Footer/>
     </div>
   );
 };
+
+
+  
+  

@@ -5,10 +5,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const NavBar = () => {
-  const [isServicesOpen, setIsServicesOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const dropdownRef = useRef(null);
-  const menuRef = useRef(null);
+  const [isServicesOpen, setIsServicesOpen] = useState(false); // State for "Service" dropdown
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu
+  const dropdownRef = useRef(null); // Reference for "Service" dropdown
+  const menuRef = useRef(null); // Reference for mobile menu
 
   const services = [
     { name: "Startup Incorporation", href: "/NewPage1" },
@@ -50,190 +50,160 @@ const NavBar = () => {
   };
 
   return (
-    <div>
-      <header className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-row items-center justify-between">
-          <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0 pl-20">
-            <Image
-              src="/bcs_logo-removebg-preview.png"
-              alt="BCS Logo"
-              width={140}
-              height={45.44}
-              priority={true}
-            />
+    <header className="text-gray-600 body-font">
+      <div className="container mx-auto flex p-5 items-center justify-between">
+        {/* Logo */}
+        <div className="flex items-center">
+          <Image
+            src="/bcs_logo-removebg-preview.png"
+            alt="BCS Logo"
+            width={140}
+            height={45.44}
+            priority={true}
+          />
+        </div>
+
+        {/* Desktop navigation */}
+        <nav className="hidden md:flex items-center space-x-8 text-base justify-center">
+          <a href="#" className="hover:text-gray-900">
+            About Us
           </a>
-          <nav className="hidden md:block md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
-            <a className="mr-10 hover:text-gray-900">About Us</a>
-            <div className="relative" ref={dropdownRef}>
-              <button
-                className="mr-10 hover:text-purple-400 flex items-center"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-              >
-                Service
-                <svg
-                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                    isServicesOpen ? 'transform rotate-180' : ''
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              {isServicesOpen && (
-                <div
-                  className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10"
-                >
-                  <div
-                    className="py-1"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="options-menu"
-                  >
-                    {services.map((service, index) => (
-                      <a
-                        key={index}
-                        href={service.href}
-                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-400 ${
-                          service.disabled
-                            ? 'opacity-50 cursor-not-allowed'
-                            : ''
-                        }`}
-                        role="menuitem"
-                        onClick={() => handleServiceClick(service.href)}
-                      >
-                        {service.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-            <a className="mr-10 hover:text-gray-900">Pricing Plan</a>
-            <a className="hover:text-gray-900">Resources</a>
-          </nav>
-          <button className="hidden md:inline-flex items-center bg-purple-600 border-0 py-2 px-3 focus:outline-none hover:bg-purple-700 rounded text-base mt-4 md:mt-0 text-white">
-            Register your Business
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
-          <div className="md:hidden">
+          <div className="relative" ref={dropdownRef}>
             <button
-              className={`block text-gray-600 hover:text-purple-400 focus:outline-none transition-transform duration-300 ${
-                isMenuOpen ? 'transform rotate-90' : ''
-              }`}
-              onClick={toggleMenu}
+              className="hover:text-purple-400 flex items-center"
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
             >
+              Service
               <svg
-                className="h-6 w-6 fill-current"
+                className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                  isServicesOpen ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
-                />
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
               </svg>
             </button>
+            {isServicesOpen && (
+              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div className="py-1" role="menu" aria-orientation="vertical">
+                  {services.map((service, index) => (
+                    <a
+                      key={index}
+                      href={service.href}
+                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-400 ${
+                        service.disabled ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                      role="menuitem"
+                      onClick={() => handleServiceClick(service.href)}
+                    >
+                      {service.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
-        </div>
-      </header>
+          <a href="#" className="hover:text-gray-900">
+            Pricing Plan
+          </a>
+          <a href="#" className="hover:text-gray-900">
+            Resources
+          </a>
+        </nav>
+
+        {/* Register button */}
+        <button className="hidden md:inline-flex items-center bg-purple-600 border-0 py-2 px-4 rounded text-white hover:bg-purple-700">
+          Register your Business
+        </button>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden text-gray-600 hover:text-purple-400"
+          onClick={toggleMenu}
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      {/* Mobile menu */}
       {isMenuOpen && (
         <div
-          className="md:hidden bg-white shadow-lg p-4 rounded-md animate-grow-fade"
+          className="md:hidden bg-white shadow-lg p-4 rounded-md space-y-4"
           ref={menuRef}
         >
-          <div className="flex flex-col">
-            <a className="mb-4 hover:text-gray-900">About Us</a>
-            <div className="relative">
-              <button
-                className="mb-4 hover:text-purple-400 flex items-center"
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
-              >
-                Service
-                <svg
-                  className={`w-4 h-4 ml-1 transition-transform duration-200 ${
-                    isServicesOpen ? 'transform rotate-180' : ''
-                  }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M19 9l-7 7-7-7"
-                  ></path>
-                </svg>
-              </button>
-              {isServicesOpen && (
-                <div
-                  className="rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10"
-                >
-                  <div
-                    className="py-1"
-                    role="menu"
-                    aria-orientation="vertical"
-                    aria-labelledby="options-menu"
-                  >
-                    {services.map((service, index) => (
-                      <a
-                        key={index}
-                        href={service.href}
-                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-400 ${
-                          service.disabled
-                            ? 'opacity-50 cursor-not-allowed'
-                            : ''
-                        }`}
-                        role="menuitem"
-                        onClick={() => handleServiceClick(service.href)}
-                      >
-                        {service.name}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-            <a className="mb-4 hover:text-gray-900">Pricing Plan</a>
-            <a className="hover:text-gray-900">Resources</a>
-            <button className="mt-4 inline-flex items-center bg-purple-600 border-0 py-2 px-3 focus:outline-none hover:bg-purple-700 rounded text-base text-white">
-              Register your Business
+          <a className="block text-base hover:text-gray-900">About Us</a>
+          <div className="relative" ref={dropdownRef}>
+            <button
+              className="flex items-center hover:text-purple-400"
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+            >
+              Service
               <svg
+                className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                  isServicesOpen ? 'rotate-180' : ''
+                }`}
                 fill="none"
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-4 h-4 ml-1"
                 viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M19 9l-7 7-7-7"
+                ></path>
               </svg>
             </button>
+            {isServicesOpen && (
+              <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-10">
+                <div className="py-1" role="menu" aria-orientation="vertical">
+                  {services.map((service, index) => (
+                    <a
+                      key={index}
+                      href={service.href}
+                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-purple-400 ${
+                        service.disabled ? 'opacity-50 cursor-not-allowed' : ''
+                      }`}
+                      role="menuitem"
+                      onClick={() => handleServiceClick(service.href)}
+                    >
+                      {service.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
+          <a className="block text-base hover:text-gray-900">Pricing Plan</a>
+          <a className="block text-base hover:text-gray-900">Resources</a>
+          <button className="w-full bg-purple-600 border-0 py-2 px-4 rounded text-white hover:bg-purple-700">
+            Register your Business
+          </button>
         </div>
       )}
-    </div>
+    </header>
   );
 };
 
